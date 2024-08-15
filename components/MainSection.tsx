@@ -11,14 +11,19 @@ const MainContainer = styled.main`
   margin: 20px auto;
   border-radius: 3px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  width: 600px;
+  width: 100%; /* widthを100%に設定 */
+  max-width: 600px; /* 最大幅を設定 */
   height: 60px;
-  text-align: center; /* テキストを中央揃えに */
+  text-align: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 
   &:hover {
     transform: translateY(-12px);
     box-shadow: 0 10px 8px rgba(0, 0, 0, 0.2);
+  }
+
+  @media (max-width: 600px) {
+    
   }
 `;
 
@@ -26,26 +31,37 @@ const StyledLink = styled.a`
   text-decoration: none;
   color: inherit;
   width: 100%;
-  display: flex; /* flexboxレイアウトを使用 */
-  align-items: center; /* 中央揃え */
-  justify-content: space-between; /* 写真を左揃え、テキストを中央揃えに */
+  display: flex; 
+  align-items: center;
+  justify-content: space-between;
+
+  @media (max-width: 600px) {
+    
+    text-align: center; /* テキストを中央揃えに */
+  }
 `;
 
 const Icon = styled.img`
-  width: 50px; /* アイコンのサイズを調整 */
-  height: 50px; /* アイコンのサイズを調整 */
+  width: 50px; 
+  height: 50px; 
   border-radius: 50%;
-  margin-right: 20px; /* 画像とテキストの間のスペース */
+  margin-right: 20px;
+
+  @media (max-width: 600px) {
+      margin-right: 0; /* モバイルではマージンをリセット */
+  }
 `;
 
 const TextContainer = styled.div`
-  flex: 1; /* テキストコンテナが残りのスペースを占めるように */
+  flex: 1;
   display: flex;
   justify-content: center;
-  text-align: center; /* テキストを中央揃えに */
-  padding-right: calc(
-    50px + 20px
-  ); /* 写真の幅とマージンを考慮してパディングを追加 */
+  text-align: center;
+  padding-right: calc(50px + 20px);
+
+  @media (max-width: 600px) {
+    padding-right: 0; /* モバイルではパディングをリセット */
+  }
 `;
 
 const MainSection: React.FC = () => {
@@ -234,7 +250,7 @@ const MainSection: React.FC = () => {
     </div>
   );
 };
-
+<MainSection />
 // export default MainSection;
 
 export default function IndexPage() {
